@@ -6,12 +6,29 @@
 
 <body ng-app="chat">
 
-  <ion-pane>
+  <ion-pane ng-controller="ChatCtrl">
     <ion-header-bar class="bar-royal">
       <h1 class="title">Chat</h1>
     </ion-header-bar>
-    <ion-content>
-    </ion-content>
-  </ion-pane>
 
+    <ion-content>
+      <div class="message-list">
+        <div class="message" ng-repeat="message in messages" ng-class="{ other: message.userId != myId }">
+          <div class="photo" ng-style="{ backgroundImage: 'url(' + message.photo + ')' }"></div>
+          <div class="text">
+            <span ng-bind="message.text"></span>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+
+    <ion-footer-bar class="bar-royal item-input-inset">
+      <label class="item-input-wrapper">
+        <input ng-model="data.message" ng-keypress="$event.which == 13 && sendMessage()" type="text" placeholder="Type a message">
+      </label>
+      <button class="button button-clear" ng-click="sendMessage()">
+        Send
+      </button>
+    </ion-footer-bar>
+  </ion-pane>
 </body>
