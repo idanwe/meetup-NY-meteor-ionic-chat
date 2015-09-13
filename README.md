@@ -22,3 +22,9 @@
 2. Add to `index.html` - `<blaze-template name="loginButtons"></blaze-template>`
 3. Add to message wrapper div (`.message-list`) `ng-if="$root.currentUser`
 4. Add `currentUser._id` to message
+
+#### Step 4 - methods and publish
+
+1. Run `metoer remove insecure autopublish`
+2. Add `sendMessage` method
+3. Add pubish and subscribe
