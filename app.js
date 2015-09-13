@@ -1,8 +1,11 @@
 // Meteor Starter App
+
+Messages = new Meteor.Collection('messages');
+
 if (Meteor.isClient) {
 
   angular
-    .module('chat', ['ionic'])
+    .module('chat', ['ionic', 'angular-meteor'])
     .controller('ChatCtrl', ChatCtrl);
 
   function ChatCtrl ($scope, $ionicScrollDelegate) {
@@ -10,7 +13,7 @@ if (Meteor.isClient) {
 
     $scope.data = {};
     $scope.myId = '12345';
-    $scope.messages = [];
+    $scope.messages = $scope.$meteorCollection(Messages);
 
     $scope.sendMessage = sendMessage;
 

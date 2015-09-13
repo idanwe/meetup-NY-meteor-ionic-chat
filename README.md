@@ -9,3 +9,9 @@
 
 1. Run `meteor add fourseven:scss`
 2. Add chat template and CtrlController
+
+#### Step 2 - Save messages
+
+1. Add 'angular-meteor' as angular module
+2. Add `Messages = new Meteor.Collection('messages');` 
+3. Assign angular meteor collection to $scope `$scope.messages = $scope.$meteorCollection(Messages);`
