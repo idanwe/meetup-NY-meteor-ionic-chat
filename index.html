@@ -12,8 +12,10 @@
     </ion-header-bar>
 
     <ion-content>
-      <div class="message-list">
-        <div class="message" ng-repeat="message in messages" ng-class="{ other: message.userId != myId }">
+      <blaze-template name="loginButtons"></blaze-template>
+
+      <div ng-if="$root.currentUser" class="message-list">
+        <div class="message" ng-repeat="message in messages" ng-class="{ other: message.userId != $root.currentUser._id }">
           <div class="photo" ng-style="{ backgroundImage: 'url(' + message.photo + ')' }"></div>
           <div class="text">
             <span ng-bind="message.text"></span>
