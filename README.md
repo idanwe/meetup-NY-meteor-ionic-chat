@@ -25,6 +25,6 @@
 
 #### Step 4 - methods and publish
 
-1. Run `metoer remove insecure autopublish`
+1. Run `meteor remove insecure autopublish`
 2. Add `sendMessage` method
 3. Add pubish and subscribe
